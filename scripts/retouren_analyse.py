@@ -4,6 +4,8 @@
 Das Script rechnet, die AI interpretiert. Ausgabe ist ein analysis.json,
 aus dem der Report geschrieben wird. Nur Python-Stdlib.
 """
+# naming-lint: schema (deutsche Handels- und Buchhaltungsbegriffe, 64 von 131 Schluesseln: Retourenquote, Rohertrag, Zahlart; keine brauchbare Uebersetzung, und dashboard.py plus analysis.json lesen sie)
+# brauchbare Uebersetzung, und dashboard.py plus analysis.json lesen sie.)
 
 import argparse
 import csv

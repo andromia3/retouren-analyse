@@ -4,3 +4,4 @@ __pycache__/
 /analysis.json
 /dashboard.html
 /skills/
+.DS_Store

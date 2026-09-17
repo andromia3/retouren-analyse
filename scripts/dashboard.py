@@ -6,6 +6,7 @@ Charts sind inline SVG. Farblogik: eine Datenfarbe (Emerald) plus ein Akzent
 (Signal) ausschliesslich fuer das, was auffaellt. Keine kategorische Palette,
 weil jeder Chart genau eine Serie hat.
 """
+# naming-lint: schema (liest das Schema aus retouren_analyse.py, siehe dort)
 
 import argparse
 import html
