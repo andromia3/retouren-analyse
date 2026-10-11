@@ -59,16 +59,17 @@ def sammle(d):
         summe = sum(_artikel_kosten(d, n) for n in namen)
         schlimmster = min(arts, key=lambda a: a["db_nach_retouren"])
         b.append({
-            "titel": f'{namen[0]} verdient nach Retouren nichts mehr',
+            "titel": f'{namen[0]}: Rohertrag durch Retouren stark gesunken',
             "unsichtbar": "Retourenkosten stehen in keiner Sortimentsauswertung am Artikel. "
                           "Dort erscheint er mit normaler Marge und normalem Umsatz.",
-            "was": f'{len(arts)} Varianten stehen nach Abzug der Retourenkosten bei oder unter null, '
+            "was": f'{len(arts)} Varianten stehen nach Abzug der Retourenkosten unter einem Viertel '
+                   f'ihres vorherigen Rohertrags, '
                    f'{len(neg)} davon im Minus. Schlechteste Variante {schlimmster["sku"]}: '
                    f'{_eur(schlimmster["db_vor_retouren"])} Rohertrag, danach {_eur(schlimmster["db_nach_retouren"])}.',
-            "warum": "Jeder verkaufte Artikel dieser Sorte kostet unterm Strich Geld. Mehr Absatz "
-                     "verschlimmert das Problem, statt es zu lösen. Ursache ist fast immer die "
-                     "Kombination aus dünner Marge und normaler Retourenquote: Bei 30 Prozent Rohmarge "
-                     "reicht eine durchschnittliche Quote, um den Artikel ins Minus zu drehen.",
+            "warum": "Die Retourenkosten haben den Rohertrag dieser Varianten stark verringert. "
+                     "Ein geringer verbleibender Rohertrag ist noch kein Verlust. Ob der Rohertrag "
+                     "negativ ist, zeigen die ausgewiesenen Beträge. Die Ursache muss anhand der "
+                     "Retourengründe und der Kalkulation geprüft werden.",
             "hebel": summe,
             "hebel_text": f'{_eur(summe)} Retourenkosten im Zeitraum',
             "schritte": [
